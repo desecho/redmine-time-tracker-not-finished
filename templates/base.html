@@ -1,0 +1,36 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <meta HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+  <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'bower/jgrowl/jquery.jgrowl.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bower/bootstrap/dist/css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'bower/tether/dist/css/tether.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bower/mprogress/build/css/mprogress.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bower/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'style.css' %}" rel="stylesheet">
+  {% block head %}{% endblock %}
+
+  <meta charset="utf-8">
+  <title>{% block title %}Redmine Tracker{% endblock %}</title>
+</head>
+<body>
+  {% include 'includes/menu.html' %}
+  <div id="content" class="container-fluid">
+    {% block content %}{% endblock %}
+  </div>
+  <script src="{% static 'bower/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'bower/jgrowl/jquery.jgrowl.min.js' %}"></script>
+  <script src="{% static 'bower/mprogress/build/js/mprogress.min.js' %}"></script>
+  <script src="{% static 'bower/tether/dist/js/tether.min.js' %}"></script>
+  <script src="{% static 'bower/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'main.js' %}"></script>
+{% block js %}{% endblock %}
+
+</body>
+</script>

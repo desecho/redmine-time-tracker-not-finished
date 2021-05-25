@@ -1,0 +1,40 @@
+[
+{
+    "model": "redmine_tracker.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$siOxxLbazax8$VydH5F38mlWTffnodk7iDtX9UIg1uhNcOc88qMJpIbg=",
+        "last_login": "2017-05-01T19:04:35.297Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-05-01T19:04:21.369Z",
+        "redmine_api_key": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "redmine_tracker.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$J348BRMqzHDc$AgCFvEllXH03nH4qJS95Ib4Vvd15IkWLqsU4FrLDWd4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "neo",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-05-01T19:04:38Z",
+        "redmine_api_key": "",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

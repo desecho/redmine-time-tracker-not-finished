@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/"><i class="fa fa-clock-o"></i></a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav">
+      {% if user.is_authenticated %}
+      <li class="nav-item"><a href="{% url 'preferences' %}" class="nav-link"><i class="fa fa-cog"></i></a>
+      <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link"><i class="fa fa-sign-out"></i></a>
+      {% else %}
+        <!-- <a href="{% url 'login' %}" class="nav-link"><i class="fa fa-sign-in"></i></a> -->
+      {% endif %}
+    </ul>
+  </div>
+</nav>

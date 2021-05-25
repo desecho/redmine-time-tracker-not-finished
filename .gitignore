@@ -1,0 +1,13 @@
+__pycache__
+.tox
+*.pyc
+
+._*
+.DS_Store
+.coverage
+.idea
+env
+.cache
+local_settings.py
+db.sqlite3
+redmine_tracker/static/bower/

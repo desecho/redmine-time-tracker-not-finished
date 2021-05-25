@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+{% if not user.redmine_api_key %}
+<div class="alert alert-danger col-md-4">
+    <a href="{% url 'preferences' %}"><strong>{% trans 'You need to enter your API key.' %}</strong></a>
+</div>
+{% else %}
+
+
+<div class="col-md-4">
+{% include 'includes/form_errors.html' %}
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label>{{ form.task_id }}</label>
+    <label class="ml-sm-2"><input type="submit" class="btn btn-block btn-primary" value="{% trans 'Add' %}"></label>
+  </div>
+</form>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-4">
+  {% for task in tasks %}
+    {{ task }}<br>
+  {% endfor %}
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}
+
+{% block js %}
+<script>
+</script>
+{% endblock %}

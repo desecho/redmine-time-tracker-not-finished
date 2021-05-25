@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<div class="col-md-4">
+<form class="form-horizontal" method="post">
+  {% csrf_token %}
+  <legend>{% trans 'Preferences' %}</legend>
+  {% if user.redmine_api_key %}
+    {% trans 'User' %}: {{ user.get_full_name }}<br>
+  {% endif %}
+  {% include 'includes/form_errors.html' %}
+  <div class="form-group">
+    {{ form.api_key.label }}:
+    {{ form.api_key }}
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-block btn-primary" value="{% trans 'Save' %}">
+  </div>
+</form>
+<button onclick="redmineTracker.importProjects()" class="btn btn-block btn-secondary">{% trans 'Import Projects' %}</button>
+</div>
+<br>
+<div class="col-md-8">
+  {% if user.projects.exists %}
+    Redmine {% trans 'projects' %}:
+    <ul>
+    {% for project in user.projects.all %}
+      <li><span contenteditable>{{ project.name }}</span>
+          <a href="javascript:void(0);" onclick="redmineTracker.toggleProject(this, {{ project.pk }})">
+        <i class="fa
+          {% if project.is_hidden %}
+          fa-eye-slash
+          {% else %}
+          fa-eye
+          {% endif %}
+          "></i></a>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+  var urlImportProjects = '{% url 'import_projects' %}';
+  var urlToggleProject = '{% url 'toggle_project' %}';
+</script>
+{% endblock %}

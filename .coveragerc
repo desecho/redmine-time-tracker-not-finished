@@ -1,0 +1,24 @@
+[run]
+branch = True
+omit =
+    redmine_tracker/tests.py
+    redmine_tracker/migrations/*
+    /tmp/*
+    /usr/lib/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if self\.debug
+    raise AssertionError
+    raise NotImplementedError
+
+ignore_errors = True
+show_missing = True
+
+omit =
+    redmine_tracker/tests.py
+    redmine_tracker/migrations/*
+    /tmp/*
+    /usr/lib/*
